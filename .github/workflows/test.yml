@@ -1,0 +1,10 @@
+on: [push]
+
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+    - id: deploy
+      uses: nbadal/raygun-deploy@v1
+
+    - run: echo "The ID was ${{ steps.deploy.outputs.deploymentId }}"
