@@ -4,7 +4,12 @@ jobs:
   test_job:
     runs-on: ubuntu-latest
     steps:
-    - id: deploy
+    - id: raygun
       uses: nbadal/raygun-deploy@v1
+      with:
+        apiKey: ${{ secrets.RAYGUN_API_KEY }}
+        authToken: ${{ secrets.RAYGUN_AUTH_TOKEN }}
+        version: 321
 
-    - run: echo "The ID was ${{ steps.deploy.outputs.deploymentId }}"
+    - name: Test outputs
+      run: echo "The ID was ${{ steps.raygun.outputs.deploymentId }}"
