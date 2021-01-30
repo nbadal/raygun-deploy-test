@@ -9,8 +9,8 @@ jobs:
       with:
         apiKey: ${{ secrets.RAYGUN_API_KEY }}
         authToken: ${{ secrets.RAYGUN_AUTH_TOKEN }}
-        comment: ${{ env.GITHUB_SHA }}
-        scmIdentifier: "${GITHUB_SHA}"
+        comment: ${{ github.sha }}
+        scmIdentifier: ${{ github.sha }}
         version: 3212
 
     - name: Test outputs
