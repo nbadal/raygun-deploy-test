@@ -9,8 +9,9 @@ jobs:
       with:
         apiKey: ${{ secrets.RAYGUN_API_KEY }}
         authToken: ${{ secrets.RAYGUN_AUTH_TOKEN }}
+        comment: "${GITHUB_SHA}"
         scmIdentifier: "${GITHUB_SHA}"
-        version: 321
+        version: 3212
 
     - name: Test outputs
-      run: echo "The Link was ${{ steps.raygun.outputs.deploymentId }}"
+      run: echo "The Link was ${{ steps.raygun.outputs.url }}"
