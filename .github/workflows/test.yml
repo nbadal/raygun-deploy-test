@@ -9,7 +9,7 @@ jobs:
       with:
         apiKey: ${{ secrets.RAYGUN_API_KEY }}
         authToken: ${{ secrets.RAYGUN_AUTH_TOKEN }}
-        comment: ${{GITHUB_SHA}}
+        comment: ${{ env.GITHUB_SHA }}
         scmIdentifier: "${GITHUB_SHA}"
         version: 3212
 
